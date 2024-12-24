@@ -1,9 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
+import { useEffect } from "react";
+import LocomotiveScroll from "locomotive-scroll";
+import HeroSection from "./components/HeroSection";
 
 function App() {
+  useEffect(() => {
+    const scroll = new LocomotiveScroll({
+      el: document.querySelector("[data-scroll-container]"),
+      smooth: true,
+    });
+  }, []);
+
   return (
-    <div className="App">
+    <div data-scroll-container>
+      <HeroSection />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
