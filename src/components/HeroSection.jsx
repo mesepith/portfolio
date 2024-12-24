@@ -8,11 +8,20 @@ const HeroSection = () => {
   useEffect(() => {
     gsap.fromTo(
       ".hero-title",
-      { opacity: 0, y: 50 },
+      { opacity: 0, y: 50, boxShadow: "0 0 20px rgba(255, 255, 255, 0)" },
       {
         opacity: 1,
         y: 0,
         duration: 1.5,
+        boxShadow: "0 0 20px rgba(255, 255, 255, 1)",
+        ease: "power3.out",
+        onComplete: () => {
+          gsap.to(".hero-title", {
+            boxShadow: "0 0 20px rgba(255, 255, 255, 0)",
+            duration: 1.5,
+            ease: "power3.out",
+          });
+        },
         scrollTrigger: {
           trigger: ".hero-title",
           start: "top 80%",
