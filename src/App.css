@@ -103,18 +103,29 @@ html {
 }
 
 .accomplishments-container {
-  position: relative;
-  width: 200px;
-  height: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
   margin: 0 auto;
 }
 
 .accomplishment-word {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
+  opacity: 1;
+  transition: transform 1.5s, opacity 1.5s;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .accomplishment-word {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .accomplishment-word {
+    font-size: 0.6rem;
+  }
 }
 
 /* Add more styles as needed */

@@ -10,12 +10,14 @@ const AccomplishmentsSection = () => {
 
     gsap.fromTo(
       words,
-      { rotation: 360, x: (i) => 100 * Math.cos((i / words.length) * 2 * Math.PI), y: (i) => 100 * Math.sin((i / words.length) * 2 * Math.PI) },
+      { opacity: 0, x: (i) => 100 * Math.cos((i / words.length) * 2 * Math.PI), y: (i) => 100 * Math.sin((i / words.length) * 2 * Math.PI) },
       {
-        rotation: 0,
+        opacity: 1,
         x: 0,
         y: 0,
+        rotation: 0, // Ensure the words are not rotated
         duration: 1.5,
+        stagger: 0.1,
         scrollTrigger: {
           trigger: ".accomplishments-section",
           start: "top 80%",
@@ -35,6 +37,12 @@ const AccomplishmentsSection = () => {
         <span className="accomplishment-word">Git</span>
         <span className="accomplishment-word">Bitbucket</span>
         <span className="accomplishment-word">Jira</span>
+        <span className="accomplishment-word">Artificial Intelligent</span>
+        <span className="accomplishment-word">Node JS</span>
+        <span className="accomplishment-word">IOS App</span>
+        <span className="accomplishment-word">Android App</span>
+        <span className="accomplishment-word">React JS</span>
+        <span className="accomplishment-word">React Native</span>
       </div>
     </section>
   );
