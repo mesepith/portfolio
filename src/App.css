@@ -1,3 +1,7 @@
+html, body {
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
 .App {
   text-align: center;
   overflow-y: auto; /* Add this line to enable vertical scrolling */
@@ -53,6 +57,8 @@ html {
   align-items: center;
   color: white;
   text-align: center;
+  padding: 0 20px; /* Add padding to prevent overflow */
+  box-sizing: border-box; /* Include padding in the element's total width and height */
 }
 
 .hero-title {
@@ -93,6 +99,7 @@ html {
 .about-section, .tech-expertise-section, .accomplishments-section, .mission-section, .footer-section {
   padding: 50px 20px;
   text-align: center;
+  box-sizing: border-box; /* Include padding in the element's total width and height */
 }
 
 .about-section img {
@@ -184,6 +191,44 @@ html {
   .mission-text {
     font-size: 0.9rem;
   }
+}
+
+.footer-section {
+  padding: 40px 20px;
+  background-color: #282c34;
+  color: white;
+  text-align: center;
+  position: relative;
+  width: 100%;
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.footer-links {
+  margin-top: 20px;
+}
+
+.footer-section h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.footer-section a {
+  color: #61dafb;
+  margin: 0 15px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.footer-section a:hover {
+  background-color: rgba(97, 218, 251, 0.1);
+  text-decoration: none;
 }
 
 /* Add more styles as needed */
