@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from "gsap-trial";
+import ScrollTrigger from "gsap-trial/ScrollTrigger";
 import HeroSection from "./components/HeroSection";
 import AboutSection from "./components/AboutSection";
 import TechExpertiseSection from "./components/TechExpertiseSection";

@@ -258,34 +258,39 @@ html {
 }
 
 .mission-section {
+  min-height: 50vh;
   padding: 50px 20px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mission-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .mission-text {
-  max-width: 800px;
-  margin: 0 auto;
   font-size: 1.2rem;
-  line-height: 1.6;
-  opacity: 0; /* Initial opacity for animation */
+  line-height: 1.8;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
 }
 
-.mission-text span {
-  display: inline-block;
-  opacity: 0;
-  white-space: nowrap; /* Ensure words do not wrap */
-}
-
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .mission-text {
     font-size: 1rem;
+    padding: 15px;
   }
 }
 
 @media (max-width: 480px) {
   .mission-text {
     font-size: 0.9rem;
+    padding: 10px;
   }
 }
 
