@@ -48,51 +48,129 @@ html {
 }
 
 .hero-section {
-  background: url('/src/images/gray-painted-background.jpg') no-repeat center center;
-  background-size: cover; /* Ensure the background image covers the entire section */
-  height: 100vh;
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(to right, #0a192f, #112240);
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  color: white;
-  text-align: center;
-  padding: 0 20px; /* Add padding to prevent overflow */
-  box-sizing: border-box; /* Include padding in the element's total width and height */
+  justify-content: center;
+  color: #e6f1ff;
+  overflow: hidden;
+  padding: 0 20px;
+}
+
+.hero-content {
+  max-width: 1200px;
+  width: 100%;
+  z-index: 1;
 }
 
 .hero-title {
-  font-size: 3rem;
-  margin: 0 0 20px 0; /* Add space between title and subtitle */
-  padding: 10px;
-  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
 }
 
-.hero-subtitle {
+.greeting {
   font-size: 1.5rem;
-  margin: 0;
-  padding: 0 20px; /* Add padding to the subtitle */
+  color: #64ffda;
 }
 
-/* Responsive adjustments */
+.name {
+  font-size: 4.5rem;
+  font-weight: 800;
+  background: linear-gradient(to right, #64ffda, #64b6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.role {
+  font-size: 3.5rem;
+  color: #8892b0;
+}
+
+.hero-description {
+  font-size: 1.25rem;
+  color: #8892b0;
+  max-width: 600px;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.hero-social-links {
+  display: flex;
+  gap: 2rem;
+  font-size: 1.5rem;
+}
+
+.hero-social-links a {
+  color: #64ffda;
+  transition: all 0.3s ease;
+}
+
+.hero-social-links a:hover {
+  color: #64b6ff;
+  transform: translateY(-3px);
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: #64ffda;
+  font-size: 0.875rem;
+}
+
+.scroll-arrow {
+  width: 1px;
+  height: 50px;
+  background: linear-gradient(to bottom, #64ffda 50%, transparent);
+  animation: scrollIndicate 2s ease-in-out infinite;
+}
+
+@keyframes scrollIndicate {
+  0% { transform: scaleY(0); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+  50.1% { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
 @media (max-width: 768px) {
-  .hero-title {
+  .name {
+    font-size: 3.5rem;
+  }
+  
+  .role {
     font-size: 2.5rem;
   }
-
-  .hero-subtitle {
-    font-size: 1.2rem;
+  
+  .hero-description {
+    font-size: 1.1rem;
   }
 }
 
 @media (max-width: 480px) {
-  .hero-title {
+  .name {
+    font-size: 2.5rem;
+  }
+  
+  .role {
     font-size: 2rem;
   }
-
-  .hero-subtitle {
+  
+  .hero-description {
     font-size: 1rem;
-    padding: 0 10px; /* Add padding to the subtitle on smaller screens */
+  }
+  
+  .hero-social-links {
+    font-size: 1.25rem;
   }
 }
 
@@ -333,3 +411,93 @@ html {
 }
 
 /* Add more styles as needed */
+
+.decorative-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.decorative-element {
+  position: absolute;
+  opacity: 0.1;
+  color: #64ffda;
+}
+
+.code-icon {
+  top: 15%;
+  right: 20%;
+  font-size: 4rem;
+}
+
+.server-icon {
+  top: 40%;
+  right: 15%;
+  font-size: 3.5rem;
+}
+
+.database-icon {
+  top: 65%;
+  right: 25%;
+  font-size: 3rem;
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  border: 2px solid #64ffda;
+  border-radius: 50%;
+  top: 20%;
+  right: 30%;
+}
+
+.square {
+  width: 80px;
+  height: 80px;
+  border: 2px solid #64ffda;
+  top: 50%;
+  right: 35%;
+  transform: rotate(45deg);
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 86.6px solid #64ffda;
+  top: 70%;
+  right: 25%;
+  opacity: 0.05;
+}
+
+@media (max-width: 768px) {
+  .decorative-container {
+    transform: rotate(90deg) scale(0.8);
+    top: -20%;
+  }
+
+  .decorative-element {
+    opacity: 0.05;
+  }
+
+  .code-icon {
+    left: 20%;
+    top: 10%;
+  }
+
+  .server-icon {
+    left: 40%;
+    top: 15%;
+  }
+
+  .database-icon {
+    left: 60%;
+    top: 10%;
+  }
+
+  .circle, .square, .triangle {
+    transform: scale(0.7);
+  }
+}
