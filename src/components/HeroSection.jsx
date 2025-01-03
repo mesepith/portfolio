@@ -65,7 +65,7 @@ const HeroSection = () => {
           <span className="role">Software Engineer</span>
         </h1>
         <p className="hero-description">
-          Crafting digital experiences through elegant code and innovative solutions
+          Crafting digital experiences through elegant code and innovative solutions.
         </p>
         <div className="hero-social-links">
           <a href="https://github.com" target="_blank" rel="noopener noreferrer">
